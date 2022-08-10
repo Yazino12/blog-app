@@ -1,4 +1,4 @@
-![](https://img.shields.io/badge/-Yazino12-informational)
+![](https://img.shields.io/badge/-Yazino12-yellow)
 
 # blog-app
 
