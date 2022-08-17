@@ -1,1 +1,9 @@
-<h1>HERE ARE ALL POSTS FOR A GIVEN USER</h1>
+<div class="container">
+  <%= render "shared/user", :locals => {:user => @user} %>
+  <% @posts.each do |post| %>
+    <%= render "shared/post", :locals => {:post => post}%>
+    <% post.recent_comments.each do |comment| %>
+        <%= render "shared/comment", :locals => {:user => @user, :comment => comment}%>
+    <% end %>
+  <% end %>
+</div>
