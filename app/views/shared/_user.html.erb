@@ -1,0 +1,7 @@
+<div class="user">
+    <%= image_tag locals[:user].photo, alt: 'blog_image', width: '150', height: '150' %>
+    <div class="right">
+      <h1><%= locals[:user].name %></h1>
+      <p>Number of posts: <%= locals[:user].post_counter %> </P>
+    </div>
+  </div>
