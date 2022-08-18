@@ -1,1 +1,5 @@
-<h1>ALL USERS</h1>
+<div class="container">
+  <% @users.each do |user| %>
+    <%= render "shared/user", :locals => {:user => user} %>
+  <% end %>
+</div>

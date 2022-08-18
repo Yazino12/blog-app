@@ -1,1 +1,12 @@
-<h1>HERE IS A POST BY ID FOR A GIVEN USER</h1>
+<div class="container">
+<div class="post">
+  <div class="upper">
+    <h3><%= @post.title %> by <%= @user.name %> </h3>
+    <p class="comments_likes">Comments: <%= @post.comment_counter%>, Likes: <%=@post.like_counter%></p>
+  </div>
+  <p><%= @post.text %></p>
+</div>
+<% @post.comments.each do |comment| %>
+    <%= render "shared/comment", :locals => {:user => @user, :comment => comment}%>
+<% end %>
+</div>

@@ -1,1 +1,11 @@
-<h1>HERE IS A GIVEN USER BY ID</h1>
+<div class="container">
+  <%= render "shared/user", :locals => {:user => @user} %>
+  <div class="bio">
+    <h3>Bio</h3>
+    <p><%= @user.bio %></p>
+  </div>
+  <% @user.recent_posts.each do |post| %>
+    <%= render "shared/post", :locals => {:post => post}%>
+  <% end %>
+  <button type="button">See all posts</button>
+</div>
