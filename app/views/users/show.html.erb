@@ -7,5 +7,5 @@
   <% @user.recent_posts.each do |post| %>
     <%= render "shared/post", :locals => {:post => post}%>
   <% end %>
-  <button type="button">See all posts</button>
+  <%= link_to "See all posts", user_posts_path(@user.id), class: "button" %>
 </div>

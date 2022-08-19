@@ -1,9 +1,10 @@
 <div class="container">
   <%= render "shared/user", :locals => {:user => @user} %>
   <% @posts.each do |post| %>
-    <%= render "shared/post", :locals => {:post => post}%>
+    <%= render "shared/post", :locals => {:post => post, :user => @user, :index => true}%>
     <% post.recent_comments.each do |comment| %>
         <%= render "shared/comment", :locals => {:user => @user, :comment => comment}%>
     <% end %>
   <% end %>
+  <%= link_to "Add new post", new_user_post_path(@user.id), class: "button" %>
 </div>

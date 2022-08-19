@@ -1,0 +1,16 @@
+<div class="container">
+<%= form_with model: @comment, url: user_post_comments_path, method: :post, local: true  do |f| %>
+
+    <div class="form">
+      <h3>Add Comment</h3>
+      <div>
+        <%= f.label :text, "Comment:" %>
+        <%= f.text_area :text %>
+      </div>
+      <div class="actions">
+        <%= f.submit "Add Comment" %>
+      </div>
+    </div>
+  
+  <% end %>
+  </div>
