@@ -14,11 +14,14 @@
  *= require_self
  */
 
-button {
-  font-size: 1em;
+.button {
+  font-size: 1.2em;
   padding: 1em;
   width: 200px;
   background-color: beige;
+  text-align: center;
+  text-decoration: none;
+  color: black;
   margin: auto;
   cursor: pointer;
 }
@@ -52,7 +55,8 @@ button {
 
 .user .right {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 1em;
   align-items: center;
   flex: 2;
   border: 0.1em solid black;
@@ -60,15 +64,33 @@ button {
   background-color: beige;
 }
 
-.user .right p {
+.user .right .right_upper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.user .right .right_upper p {
   margin-top: 3em;
   margin-bottom: 0;
+}
+
+.user .right .right_lower .button,
+.post .button {
+  font-size: 1em;
+  padding: 0.2em;
+  background-color: rgb(222, 222, 196);
 }
 
 .post .upper {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.post .lower {
+  display: flex;
+  justify-content: space-between;
 }
 
 .post .comments_likes {
@@ -78,4 +100,26 @@ button {
 
 .comments {
   border: none;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 1em;
+  width: 600px;
+  margin: auto;
+  background-color: beige;
+}
+
+.form #title,
+.form #text {
+  padding: 1em;
+  width: 300px;
+  margin: auto;
+}
+
+.form .actions {
+  width: 300px;
+  margin: auto;
 }

@@ -1,5 +1,5 @@
 <div class="container">
   <% @users.each do |user| %>
-    <%= render "shared/user", :locals => {:user => user} %>
+    <%= render "shared/user", :locals => {:user => user, :index => true} %>
   <% end %>
 </div>

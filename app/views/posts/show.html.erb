@@ -4,9 +4,15 @@
     <h3><%= @post.title %> by <%= @user.name %> </h3>
     <p class="comments_likes">Comments: <%= @post.comment_counter%>, Likes: <%=@post.like_counter%></p>
   </div>
-  <p><%= @post.text %></p>
+  <div class="lower">
+    <p><%= @post.text %></p>
+    <%= form_with model: @like, url: user_post_likes_path(@post.author_id, @post.id), method: :post, local: true do |f| %>
+      <%= f.submit "Like", class: "button" %>
+    <% end %>
+  </div>
 </div>
 <% @post.comments.each do |comment| %>
     <%= render "shared/comment", :locals => {:user => @user, :comment => comment}%>
 <% end %>
+<%= link_to "Add new comment",  new_user_post_comment_path(@user.id, @post.id), class: "button" %>
 </div>

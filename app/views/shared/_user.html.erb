@@ -1,7 +1,22 @@
 <div class="user">
+  <% if locals[:index] %>
     <%= image_tag locals[:user].photo, alt: 'blog_image', width: '150', height: '150' %>
     <div class="right">
+      <div class="right_upper">
+        <h1><%= locals[:user].name %></h1>
+        <p>Number of posts: <%= locals[:user].post_counter %> </P>
+      </div>
+      <div class="right_lower">
+        <%= link_to "View", user_path(locals[:user].id), class: "button" %>
+      </div>
+    </div>
+  <% else %>
+  <%= image_tag locals[:user].photo, alt: 'blog_image', width: '150', height: '150' %>
+  <div class="right">
+    <div class="right_upper">
       <h1><%= locals[:user].name %></h1>
       <p>Number of posts: <%= locals[:user].post_counter %> </P>
     </div>
   </div>
+  <% end %>
+</div>

@@ -1,5 +1,12 @@
 <div class="post">
-  <h3><%= locals[:post].title %></h3>
-  <p><%= locals[:post].text %></p>
-  <p class="comments_likes">Comments: <%=locals[:post].comment_counter%>, Likes: <%=locals[:post].like_counter%></p>
+  <% if locals[:index] %>
+    <h3><%= locals[:post].title %></h3>
+    <p><%= locals[:post].text %></p>
+    <p class="comments_likes">Comments: <%=locals[:post].comment_counter%>, Likes: <%=locals[:post].like_counter%></p>
+    <%= link_to "View", user_post_path(locals[:user].id, locals[:post].id), class: "button" %>
+  <% else %>
+    <h3><%= locals[:post].title %></h3>
+    <p><%= locals[:post].text %></p>
+    <p class="comments_likes">Comments: <%=locals[:post].comment_counter%>, Likes: <%=locals[:post].like_counter%></p>
+  <% end %>
 </div>
