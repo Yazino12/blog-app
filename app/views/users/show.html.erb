@@ -5,7 +5,7 @@
     <p><%= @user.bio %></p>
   </div>
   <% @user.recent_posts.each do |post| %>
-    <%= render "shared/post", :locals => {:post => post}%>
+    <%= render "shared/post", :locals => {:post => post, :user => @user, :index => true}%>
   <% end %>
-  <%= link_to "See all posts", user_posts_path(@user.id), class: "button" %>
+  <%= link_to "See all posts", user_posts_path(@user.id), class: "button see-all-posts" %>
 </div>
