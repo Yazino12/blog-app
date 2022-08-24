@@ -56,6 +56,7 @@ gem 'bootsnap', require: false
 
 group :development, :test do
   gem 'database_cleaner'
+  gem 'capybara'
   gem 'rspec-rails'
 end
 
