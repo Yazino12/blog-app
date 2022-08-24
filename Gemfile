@@ -55,8 +55,8 @@ gem 'bootsnap', require: false
 # gem "image_processing", "~> 1.2"
 
 group :development, :test do
-  gem 'database_cleaner'
   gem 'capybara'
+  gem 'database_cleaner'
   gem 'rspec-rails'
 end
 
@@ -73,7 +73,6 @@ end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-  gem 'capybara'
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
