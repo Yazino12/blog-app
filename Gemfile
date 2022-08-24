@@ -55,6 +55,7 @@ gem 'bootsnap', require: false
 # gem "image_processing", "~> 1.2"
 
 group :development, :test do
+  gem 'database_cleaner'
   gem 'rspec-rails'
 end
 
@@ -76,4 +77,4 @@ group :test do
   gem 'webdrivers'
 end
 
-gem "bullet", "~> 7.0"
+gem 'bullet', '~> 7.0'
