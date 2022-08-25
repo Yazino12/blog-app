@@ -123,3 +123,37 @@
   width: 300px;
   margin: auto;
 }
+
+.register {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  width: 600px;
+  margin: auto;
+  text-align: center;
+  background-color: beige;
+}
+
+.register form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.register form .field input {
+  width: 50%;
+  padding: 1em;
+  border-radius: 1em;
+}
+
+.register form .check-box input {
+  width: auto;
+  padding: 0;
+  border-radius: 0;
+}
+
+.register form .actions input {
+  font-size: 1em;
+  padding: 0.2em;
+  background-color: rgb(222, 222, 196);
+}
