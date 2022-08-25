@@ -9,6 +9,10 @@ gem 'ffi'
 
 gem 'pry'
 
+gem 'sassc-rails'
+
+gem 'devise'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.3', '>= 7.0.3.1'
 

@@ -66,8 +66,9 @@ GEM
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
-    addressable (2.8.0)
-      public_suffix (>= 2.0.2, < 5.0)
+    addressable (2.8.1)
+      public_suffix (>= 2.0.2, < 6.0)
+    bcrypt (3.1.18)
     bindex (0.8.1)
     bootsnap (1.13.0)
       msgpack (~> 1.2)
@@ -94,6 +95,12 @@ GEM
       activerecord (>= 5.a)
       database_cleaner-core (~> 2.0.0)
     database_cleaner-core (2.0.1)
+    devise (4.8.1)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0)
+      responders
+      warden (~> 1.2.3)
     diff-lcs (1.5.0)
     digest (3.1.0)
     erubi (1.11.0)
@@ -117,8 +124,8 @@ GEM
     matrix (0.4.2)
     method_source (1.0.0)
     mini_mime (1.1.2)
-    minitest (5.16.2)
-    msgpack (1.5.4)
+    minitest (5.16.3)
+    msgpack (1.5.6)
     net-imap (0.2.3)
       digest
       net-protocol
@@ -136,12 +143,13 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.13.8-x64-mingw-ucrt)
       racc (~> 1.4)
-    pg (1.4.2-x64-mingw-ucrt)
+    orm_adapter (0.5.0)
+    pg (1.4.3-x64-mingw-ucrt)
     pry (0.14.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
-    public_suffix (4.0.7)
-    puma (5.6.4)
+    public_suffix (5.0.0)
+    puma (5.6.5)
       nio4r (~> 2.0)
     racc (1.6.0)
     rack (2.2.4)
@@ -179,6 +187,9 @@ GEM
       zeitwerk (~> 2.5)
     rake (13.0.6)
     regexp_parser (2.5.0)
+    responders (3.0.1)
+      actionpack (>= 5.0)
+      railties (>= 5.0)
     rexml (3.2.5)
     rspec-core (3.11.0)
       rspec-support (~> 3.11.0)
@@ -198,6 +209,14 @@ GEM
       rspec-support (~> 3.10)
     rspec-support (3.11.0)
     rubyzip (2.3.2)
+    sassc (2.4.0)
+      ffi (~> 1.9)
+    sassc-rails (2.1.2)
+      railties (>= 4.0.0)
+      sassc (>= 2.0)
+      sprockets (> 3.0)
+      sprockets-rails
+      tilt
     selenium-webdriver (4.4.0)
       childprocess (>= 0.5, < 5.0)
       rexml (~> 3.2, >= 3.2.5)
@@ -214,6 +233,7 @@ GEM
       railties (>= 6.0.0)
     strscan (3.0.4)
     thor (1.2.1)
+    tilt (2.0.11)
     timeout (0.3.0)
     turbo-rails (1.1.1)
       actionpack (>= 6.0.0)
@@ -221,9 +241,11 @@ GEM
       railties (>= 6.0.0)
     tzinfo (2.0.5)
       concurrent-ruby (~> 1.0)
-    tzinfo-data (1.2022.1)
+    tzinfo-data (1.2022.3)
       tzinfo (>= 1.0.0)
     uniform_notifier (1.16.0)
+    warden (1.2.9)
+      rack (>= 2.0.9)
     web-console (4.2.0)
       actionview (>= 6.0.0)
       activemodel (>= 6.0.0)
@@ -249,6 +271,7 @@ DEPENDENCIES
   bullet (~> 7.0)
   capybara
   database_cleaner
+  devise
   ffi
   importmap-rails
   jbuilder
@@ -258,6 +281,7 @@ DEPENDENCIES
   rails (~> 7.0.3, >= 7.0.3.1)
   rails-controller-testing
   rspec-rails
+  sassc-rails
   selenium-webdriver
   sprockets-rails
   stimulus-rails
@@ -270,4 +294,4 @@ RUBY VERSION
    ruby 3.1.2p20
 
 BUNDLED WITH
-   2.3.19
+   2.3.21
