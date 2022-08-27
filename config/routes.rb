@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   end
 
   get 'api/users/:id/posts' => 'users#api_show', format: 'json'
+  get 'api/users/:user_id/posts/:post_id/comments' => 'posts#api_show', format: 'json'
 end

@@ -40,6 +40,12 @@ class PostsController < ApplicationController
     redirect_to user_path(current_user.id)
   end
 
+  def api_show
+    @post = Post.find(params[:post_id])
+    @comments = @post.comments
+    render json: { data: @comments }, status: :ok
+  end
+
   def post_params
     params.require(:post).permit(:title, :text).merge!(author_id: current_user.id)
   end
