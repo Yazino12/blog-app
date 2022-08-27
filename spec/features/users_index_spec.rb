@@ -4,9 +4,9 @@
 #   describe 'User Home page' do
 #     before :each do
 #       @first_user = User.create!(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVv',
-#                                  bio: 'Teacher from Mexico.', email: 'asdf.el@gmail.com', password: '112233')
+#                                  bio: 'Teacher from Mexico.', post_counter: 0)
 #       @second_user = User.create!(name: 'Lilly', photo: 'https://unsplash.com/photos/F_-0BxGuVv',
-#                                   bio: 'Teacher from Mexico.', email: 'qqq.el@gmail.com', password: '112233')
+#                                   bio: 'Teacher from Poland.', post_counter: 0)
 #       visit users_path
 #     end
 

@@ -1,3 +1,6 @@
 <div class="comments">
-  <p><%= locals[:user].name %>: <%= locals[:comment].text %></p>
+  <p><%= locals[:comment].author.name %>: <%= locals[:comment].text %></p>
+  <% if can? :destroy, locals[:comment] %>
+    <%= button_to 'Delete Comment', user_post_comment_path(locals[:post].author_id, locals[:post].id, locals[:comment].id), method: :delete, params: { comment_id: locals[:comment].id}, class: "del" %>
+  <%end%>
 </div>

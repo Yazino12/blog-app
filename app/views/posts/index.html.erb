@@ -3,7 +3,7 @@
   <% @posts.each do |post| %>
     <%= render "shared/post", :locals => {:post => post, :user => @user, :index => true}%>
     <% post.recent_comments.each do |comment| %>
-        <%= render "shared/comment", :locals => {:user => @user, :comment => comment}%>
+        <%= render "shared/comment", :locals => {:user => @user, :post => post, :comment => comment}%>
     <% end %>
   <% end %>
   <%= link_to "Add new post", new_user_post_path(@user.id), class: "button" %>
