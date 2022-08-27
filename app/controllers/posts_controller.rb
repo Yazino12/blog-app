@@ -3,7 +3,6 @@ class PostsController < ApplicationController
 
   def index
     @user = User.find(params[:user_id])
-    @posts = Post.includes(:comments)
     @posts = Post.where(author_id: @user.id).all
   end
 
@@ -39,6 +38,22 @@ class PostsController < ApplicationController
     user.save
     flash[:success] = 'You have deleted this post!'
     redirect_to user_path(current_user.id)
+  end
+
+  def api_show
+    @post = Post.find(params[:post_id])
+    @comments = @post.comments
+    render json: { data: @comments }, status: :ok
+  end
+
+  def api_create
+    @post = Post.find(params[:post_id])
+    @comment = current_user.comments.new(
+      text: comment_params,
+      author_id: current_user.id,
+      post_id: @post.id
+    )
+    render json: { data: @comment }, status: :ok
   end
 
   def post_params
