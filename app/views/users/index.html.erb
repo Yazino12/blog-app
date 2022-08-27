@@ -1,4 +1,5 @@
 <div class="container">
+  <%= render "shared/signed_in_as" %>
   <% @users.each do |user| %>
     <%= render "shared/user", :locals => {:user => user, :index => true} %>
   <% end %>
