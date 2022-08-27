@@ -46,6 +46,16 @@ class PostsController < ApplicationController
     render json: { data: @comments }, status: :ok
   end
 
+  def api_create
+    @post = Post.find(params[:post_id])
+    @comment = current_user.comments.new(
+      text: comment_params,
+      author_id: current_user.id,
+      post_id: @post.id
+    )
+    render json: { data: @comment }, status: :ok
+  end
+
   def post_params
     params.require(:post).permit(:title, :text).merge!(author_id: current_user.id)
   end
