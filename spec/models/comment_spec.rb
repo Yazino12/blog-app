@@ -1,32 +1,15 @@
-require 'rails_helper'
+# require 'rails_helper'
 
-RSpec.describe Comment, type: :model do
-  subject do
-    user = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.')
-    post = Post.create(title: 'Hello', text: 'This is my first post', author_id: user.id)
+# RSpec.describe Comment, type: :model do
+#   first_user = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.',
+#                            post_counter: 0)
 
-    Comment.new(post_id: post.id, author_id: user.id, text: 'Good improvements')
-  end
+#   first_post = first_user.posts.create(title: 'Hello', text: 'This is my first post', comment_counter: 0,
+#                                        like_counter: 0)
 
-  before { subject.save }
+#   first_post.comments.create(author_id: first_user.id, post_id: first_post.id, text: 'First comment added')
 
-  it 'author_id should be present' do
-    subject.author_id = nil
-    expect(subject).to_not be_valid
-  end
-
-  it 'post_id should be present' do
-    subject.post_id = nil
-    expect(subject).to_not be_valid
-  end
-
-  it 'post_id should be a string' do
-    subject.post_id = '11123'
-    expect(subject).to_not be_valid
-  end
-
-  it 'author_id should be a string' do
-    subject.author_id = '1123'
-    expect(subject).to_not be_valid
-  end
-end
+#   it 'comment_counter for Post should be updated' do
+#     expect(first_post.comment_counter).to eq(1)
+#   end
+# end

@@ -14,7 +14,8 @@
  *= require_self
  */
 
-.button {
+.button,
+.del {
   font-size: 1.2em;
   padding: 1em;
   width: 200px;
@@ -156,4 +157,13 @@
   font-size: 1em;
   padding: 0.2em;
   background-color: rgb(222, 222, 196);
+}
+
+.del {
+  background-color: red;
+  color: rgb(222, 222, 196);
+  border: none;
+  font-size: 0.8em;
+  padding: 0.3em;
+  width: 100px;
 }

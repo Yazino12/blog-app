@@ -4,9 +4,11 @@
 #   describe 'Post#Show' do
 #     before :each do
 #       @first_user = User.create!(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVv',
-#                                  bio: 'Teacher from Mexico.', email: 'asdf.el@gmail.com', password: '112233')
+#                                  bio: 'Teacher from Mexico.', post_counter: 0)
 
-#       @first_post = Post.create!(author: @first_user, title: 'Post 1', text: 'This is my new post')
+#       @first_post = Post.create!(author: @first_user,
+# title: 'Post 1', text: 'This is my new post', comment_counter: 0,
+#                                  like_counter: 0)
 
 #       @first_comment = Comment.create!(text: 'Good job!', author: @first_user, post: @first_post)
 #       @second_comment = Comment.create!(text: 'Good job!', author: @first_user, post: @first_post)
