@@ -80,6 +80,8 @@ end
 
 gem 'bullet', '~> 7.0'
 
-gem 'devise', '~> 4.8', group: :development
+gem 'devise', '~> 4.8'
 
 gem 'cancancan', '~> 3.4'
+
+gem 'rswag', '~> 2.5'
