@@ -83,7 +83,7 @@ run the test with:
 rspec spec
 ```
 
-## Authors
+## Author
 
 👤 **Yasin Warsame**
 
