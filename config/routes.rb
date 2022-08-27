@@ -12,4 +12,6 @@ Rails.application.routes.draw do
       resources :likes, only: [:create]
     end
   end
+
+  get 'api/users/:id/posts' => 'users#api_show', format: 'json'
 end

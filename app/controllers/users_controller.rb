@@ -6,4 +6,9 @@ class UsersController < ApplicationController
   def show
     @user = User.find_by_id(params[:id])
   end
+
+  def api_show
+    @posts = User.find(params[:id]).posts
+    render json: { data: @posts }, status: :ok
+  end
 end
