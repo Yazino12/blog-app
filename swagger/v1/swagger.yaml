@@ -1,0 +1,44 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/api/users/{id}/posts":
+    get:
+      summary: Retrieves all posts for a user
+      tags:
+      - posts
+      parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: posts found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  author_id:
+                    type: integer
+                  title:
+                    type: string
+                  text:
+                    type: text
+                required:
+                - author_id
+                - title
+                - text
+        '404':
+          description: post not found
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: www.example.com
